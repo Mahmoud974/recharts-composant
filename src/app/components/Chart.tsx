@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   BarChart,
@@ -51,13 +52,14 @@ const BarChartComponent: React.FC = () => {
   const [hoveredBarIndex, setHoveredBarIndex] = useState<number | null>(null);
 
   return (
-    <ResponsiveContainer className="max-w-sm">
+    <ResponsiveContainer className="max-w-sm mt-12">
       <BarChart
         width={350}
         height={200}
         data={data}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        barSize={48}
+        barSize={35}
+        barCategoryGap={11}
       >
         <XAxis
           dataKey="day"
