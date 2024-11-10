@@ -15,14 +15,6 @@ interface Db {
   amount: number;
 }
 
-interface RoundedBarProps {
-  fill: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
-
 interface CustomTooltipProps extends TooltipProps<number, string> {
   active?: boolean;
   payload?: { value: number }[];
@@ -39,10 +31,11 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
       <div
         className="p-5 rounded"
         style={{
-          backgroundColor: "brown",
+          backgroundColor: "#3B2518",
           color: "white",
           position: "absolute",
           transform: "translate(-50%, -100%)",
+          padding: "6px",
           left: coordinate.x,
           top: coordinate.y,
         }}
@@ -79,12 +72,13 @@ const BarChartComponent: React.FC = () => {
         <Bar
           dataKey="amount"
           className="cursor-pointer"
+          radius={[4, 4, 4, 4]}
           onMouseLeave={() => setHoveredBarIndex(null)}
         >
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={index === hoveredBarIndex ? "blue" : "hsl(10, 79%, 65%)"}
+              fill={index === hoveredBarIndex ? "#B5DEE4" : "hsl(10, 79%, 65%)"}
               onMouseEnter={() => setHoveredBarIndex(index)}
             />
           ))}
