@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Example from "./components/Chart";
 import Image from "next/image";
+import BarChartComponent from "./components/Chart";
 
 export default function Page() {
   const isClient = typeof window !== "undefined";
@@ -32,7 +32,7 @@ export default function Page() {
             Spending - Last 7 days
           </p>
         </div>
-        {isClient && <Example />}{" "}
+        {isClient && <BarChartComponent />}{" "}
         <hr className="border-t border-gray-300 w-full max-w-sm px-10" />
         <div className="flex justify-between items-center w-full px-6 py-4">
           <div>

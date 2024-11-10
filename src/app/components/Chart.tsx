@@ -23,18 +23,6 @@ interface RoundedBarProps {
   height: number;
 }
 
-const RoundedBar: React.FC<RoundedBarProps> = ({
-  fill,
-  x,
-  y,
-  width,
-  height,
-}) => {
-  return (
-    <rect x={x} y={y} width={width} height={height} fill={fill} rx={5} ry={5} />
-  );
-};
-
 interface CustomTooltipProps extends TooltipProps<number, string> {
   active?: boolean;
   payload?: { value: number }[];
@@ -49,7 +37,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
   if (active && payload && payload.length && coordinate) {
     return (
       <div
-        className="p-2 rounded"
+        className="p-5 rounded"
         style={{
           backgroundColor: "brown",
           color: "white",
@@ -90,7 +78,6 @@ const BarChartComponent: React.FC = () => {
 
         <Bar
           dataKey="amount"
-          shape={<RoundedBar />}
           className="cursor-pointer"
           onMouseLeave={() => setHoveredBarIndex(null)}
         >
