@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import {
   BarChart,
@@ -8,6 +7,7 @@ import {
   ResponsiveContainer,
   Cell,
   TooltipProps,
+  ReferenceArea,
 } from "recharts";
 import { data } from "../db/db";
 
@@ -35,10 +35,10 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
           backgroundColor: "#3B2518",
           color: "white",
           position: "absolute",
-          transform: "translate(-50%, -100%)",
           padding: "6px",
           left: coordinate.x,
-          top: coordinate.y,
+          top: coordinate.y - 45,
+          transform: "translateX(-50%)",
         }}
       >
         <p>{`$${payload[0].value.toFixed(2)}`}</p>

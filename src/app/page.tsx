@@ -4,8 +4,6 @@ import Image from "next/image";
 import BarChartComponent from "./components/Chart";
 
 export default function Page() {
-  const isClient = typeof window !== "undefined";
-
   return (
     <main className="flex flex-col items-center justify-center h-screen space-y-4">
       <div
@@ -32,7 +30,7 @@ export default function Page() {
             Spending - Last 7 days
           </p>
         </div>
-        {isClient && <BarChartComponent />}{" "}
+        <BarChartComponent />
         <hr className="border-t border-gray-300 w-full max-w-sm mx-16" />
         <div className="flex justify-between items-center w-full px-6 py-4">
           <div>
